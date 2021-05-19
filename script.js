@@ -3,7 +3,7 @@ var generateBtn = document.querySelector("#generate"); // looks for an id named 
 var capitals = "ABCDEFGHIJKLMNOP"
 var normal = "abcdefghijklmnop"
 var number ="0123456789"
-var specialSymbols = "!@#$%^&*()<>?*"
+var specialSymbols = "!@#$%^&*()<>?+*"
 
 // Write password to the #password input
 function writePassword() {
@@ -19,14 +19,42 @@ function generatePassword () {
     if (PWlength == null || PWlength<8 || PWlength>128 || isNaN(PWlength)) {
       alert("INVALID; Please enter a NUMBER between 8-128.");
       return
-    }
+    };
 
-  var capitals = confirm("Would you UPPERCASE letters in your password?");
-  var normal = confirm ("Would you like LOWERCASE letters in your password?");
-  var number = confirm ("would you like NUMBERS in your password?");
-  var specialSymbols = confirm ("Would you like SPECIAL CHARACTERS in your password?");
+  var capitals = confirm("Would you like UPPERCASE letters in your password?");
+    if (capitals === null || capitals === "false" ) {
+    } else if (capitals === "true"){
+    capitals = true;
+    return 
+    };
+  
+  var normal = confirm("Would you like LOWER CASE letters in your password?")
+  if (normal === null || normal === "false" ) {
+    normal = false;
+  } else if (normal === "true"){
+  normal = true;
+  return 
+  };
+
+  var number = confirm("Would you like NUMBERS letters in your password?")
+  if (number === null || number === "false" ) {
+    number = false;
+  } else if (number === "true"){
+  number = true;
+  return 
+  };
+
+  var specialSymbols = confirm("Would you like NUMBERS letters in your password?")
+  if (specialSymbols === null || specialSymbols === "false" ) {
+    specialSymbols = false;
+  } else if (specialSymbols === "true"){
+  specialSymbols = true;
+  return 
+  };
   
   }
+  console.log (generatePassword)
+  console.log (writePassword)
 
 // Add event listener to generate button- listening for click and then it will rin "writepassword"
 generateBtn.addEventListener("click", writePassword);
