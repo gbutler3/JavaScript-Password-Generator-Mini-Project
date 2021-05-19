@@ -15,11 +15,17 @@ function writePassword() {
 }
 
 function generatePassword () {
-  var ammount = prompt("How many characters do you want to use? (Must be between 8 and 128)");
-    if (ammount == null || ammount<8 || ammount>128 || isNaN(ammount)) {
+  var PWlength = prompt("How many characters do you want to use? (Must be between 8 and 128)");
+    if (PWlength == null || PWlength<8 || PWlength>128 || isNaN(PWlength)) {
       alert("INVALID; Please enter a NUMBER between 8-128.");
       return
     }
+
+  var capitals = confirm("Would you UPPERCASE letters in your password?");
+  var normal = confirm ("Would you like LOWERCASE letters in your password?");
+  var number = confirm ("would you like NUMBERS in your password?");
+  var specialSymbols = confirm ("Would you like SPECIAL CHARACTERS in your password?");
+  
   }
 
 // Add event listener to generate button- listening for click and then it will rin "writepassword"
