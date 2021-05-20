@@ -1,8 +1,6 @@
-
-
-
 // Assignment Code
 var generateBtn = document.querySelector("#generate"); // looks for an id named generatebtn
+
 var capitals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //Realized I had to put the split in there so that they wouldn't all be read together as one string
 var capitalsArray =capitals.split("");
 var normal = "abcdefghijklmnopqrstuvwxyz";
@@ -11,9 +9,8 @@ var number = "0123456789"
 var numberArray = number.split("");
 var specialSymbols = "!@#$%^&*()<>?+*";
 var specialSymbolsArray = specialSymbols.split("");
-var Inputs;//made this a variable because in the prompts I needed to define what the user input 
-var PWlength; //made this a variable because In the loop at the bottom I needed to define PWlength
-
+var Inputs;//made this a variable because in the prompts I needed to define what the user input is
+var lengthOfPassword;
 
 // Write password to the #password input
 function writePassword() {
@@ -38,9 +35,11 @@ function generatePassword () {
     console.log(" numbers  " + number)
   var specialSymbols = confirm("Would you like SYMBOLS  in your password?");
     console.log("symbols " + specialSymbols)
+
 //this is if they user inputs cancel for all the options 
  if(!capitals && !normal && !number && !specialSymbols) {
    Inputs = alert ("No criteria selected, please start over")
+   console.log(Inputs);
  } 
 //true CAP, LOWER, NUMBER, SYMBOL
  else if(capitals && normal && number && specialSymbols){
@@ -53,22 +52,53 @@ else if(capitals && normal && number){
   console.log(Inputs);
 }
 // true LOWER, NUMBER, SYMBOL
-
+else if( normal && number && specialSymbols){
+  Inputs= normalArray.concat(numberArray, specialSymbolsArray);
+  console.log(Inputs);
+}
 //true CAP, LOWER
 else if(capitals && normal){
   Inputs= capitalsArray.concat(normalArray);
   console.log(Inputs);
 }
 //true LOWER, NUMBER
+else if( normal && number){
+  Inputs= normalArray.concat(numberArray);
+  console.log(Inputs);
+}
 //true NUMBER, SYMBOL
+else if(number && specialSymbols){
+  Inputs= numberArray.concat(specialSymbolsArray);
+  console.log(Inputs);
+}
 //true CAP
 else if(capitals){
   Inputs= capitalsArray;
   console.log(Inputs);
 }
 //true LOWER
+else if( normal){
+  Inputs= normalArray;
+  console.log(Inputs);
+}
 //true NUMBER
+else if(number){
+  Inputs= numberArray;
+  console.log(Inputs);
+}
 //true SYMBOL
+else if(specialSymbols){
+  Inputs= specialSymbolsArray;
+  console.log(Inputs);
+}
+
+
+for (var i = 0; i < lengthOfPassword; i++) {
+  var allInputs = Inputs[Math.floor(Math.random() * Inputs.PWlength)];
+  fullPassword.push(allInputs);
+  console.log(allInputs);
+  return Inputs;
+}
 }
 
 // Add event listener to generate button- listening for click and then it will rin "writepassword"
