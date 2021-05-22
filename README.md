@@ -11,8 +11,9 @@ GOAL: Generating a secure password for individuals in need of a new secure passw
 * Users are also able to choose the length of the password; password lenght must be from 8-128 characters
 * Users are able to choose lowercase, uppercase, numeric, and/or special characters to include in their password.
 * User answers will be validated and at least one character type must be selected
-*Password that meets the selected criteria is then generated and displayed on the page 
+* Password that meets the selected criteria is then generated and displayed on the page 
 
 
-Link to Website: https://gbutler3.github.io/JavaScript-Password-Generator-Mini-Project/
-Link to GitHub: https://github.com/gbutler3/JavaScript-Password-Generator-Mini-Project
+* Link to Website: https://gbutler3.github.io/JavaScript-Password-Generator-Mini-Project/
+
+* Link to GitHub: https://github.com/gbutler3/JavaScript-Password-Generator-Mini-Project
