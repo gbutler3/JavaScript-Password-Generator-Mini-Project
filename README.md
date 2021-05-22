@@ -13,3 +13,6 @@ GOAL: Generating a secure password for individuals in need of a new secure passw
 * User answers will be validated and at least one character type must be selected
 *Password that meets the selected criteria is then generated and displayed on the page 
 
+
+Link to Website: 
+Link to GitHub: https://github.com/gbutler3/JavaScript-Password-Generator-Mini-Project

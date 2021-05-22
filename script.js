@@ -3,14 +3,14 @@ var generateBtn = document.querySelector("#generate"); // looks for an id named 
 
 var capitals = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"; //Realized I had to put the split in there so that they wouldn't all be read together as one string
 var capitalsArray =capitals.split("");
-var normal = "abcdefghijklmnopqrstuvwxyz";
+var normal = "abcdefghijklmnopqrstuvwxyz" //add .split("") to the end of this see java lesson 15!
 var normalArray= normal.split("");
 var number = "0123456789"
 var numberArray = number.split("");
 var specialSymbols = "!@#$%^&*()<>?+*";
 var specialSymbolsArray = specialSymbols.split("");
 var Inputs;//made this a variable because in the prompts I needed to define what the user input is
-var lengthOfPassword;
+var fullPassword= [];
 
 // Write password to the #password input
 function writePassword() {
@@ -19,7 +19,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-
 function generatePassword () {
   var PWlength = prompt("How many characters do you want to use? (Must be between 8 and 128)");
   if (PWlength == null || PWlength<8 || PWlength>128 || isNaN(PWlength)) {
@@ -40,7 +39,7 @@ function generatePassword () {
  if(!capitals && !normal && !number && !specialSymbols) {
    Inputs = alert ("No criteria selected, please start over")
    console.log(Inputs);
- } 
+ }
 //true CAP, LOWER, NUMBER, SYMBOL
  else if(capitals && normal && number && specialSymbols){
    Inputs= capitalsArray.concat(normalArray, numberArray, specialSymbolsArray);
@@ -92,13 +91,14 @@ else if(specialSymbols){
   console.log(Inputs);
 }
 
-
-for (var i = 0; i < lengthOfPassword; i++) {
-  var allInputs = Inputs[Math.floor(Math.random() * Inputs.PWlength)];
-  fullPassword.push(allInputs);
-  console.log(allInputs);
-  return Inputs;
+for (var i = 0; i < PWlength; i++) {
+  var newCharacter = Inputs[Math.floor(Math.random() * Inputs.length)];
+  fullPassword.push(newCharacter);
 }
+
+var password = fullPassword.join("");
+  console.log("Your Pasword is: " + password);
+  return password;
 }
 
 // Add event listener to generate button- listening for click and then it will rin "writepassword"
